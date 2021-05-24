@@ -1,12 +1,8 @@
 import com.fasterxml.jackson.core.`type`.TypeReference
-
 import java.io.{File, FileInputStream}
 import java.util.List
 import scala.jdk.CollectionConverters._
 import com.fasterxml.jackson.databind.ObjectMapper
-
-
-
 
 
 object main {
