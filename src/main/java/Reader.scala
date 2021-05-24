@@ -7,7 +7,7 @@ import java.util.stream.{StreamSupport}
 import collection.JavaConverters._
 import scala.collection.mutable.ListBuffer
 object Reader {
-  def main(args: Array[String]): List[Client] = {
+  def readFromExcel: List[Client] = {
     var clientList = new ListBuffer[Client]()
     var path="data/client.xls"
     StreamSupport.stream(getSheet(path).spliterator(), false).skip(1).map(row => {
