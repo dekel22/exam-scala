@@ -9,6 +9,8 @@ object main {
   def main(args: Array[String]): Unit = {
     val request:Request=getRequest()
     val persons:Iterable[Person]= getPersons()
+    val clients:Iterable[Client] =Reader.readFromExcel
+    println("yoppi")
    //StreamSupport.stream(getClient.spliterator(),false).collect(Collectors.toList())
   // StreamSupport.stream(getClient.spliterator(),false).map(row=>row.cellIterator())
 
