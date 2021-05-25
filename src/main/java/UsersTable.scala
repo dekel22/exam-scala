@@ -1,3 +1,4 @@
+import Extensions.StringHelper
 import UserClasses.{Client, User}
 import Utils.Request
 
@@ -24,7 +25,7 @@ class UsersTable {
       p.email.contains(".com") && p.email.contains("@")
     })
       .filter(p => {
-        p.age > 0 && p.phone.exists(_.isDigit)
+        p.age > 0 && p.phone.isValidPhoneNumber
       }).foreach(user=>filtered+=user)
     userList= filtered.asJava.toList
   }

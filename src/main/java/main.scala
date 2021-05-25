@@ -1,3 +1,4 @@
+import Extensions.StringHelper
 import UserClasses.{Client, Person}
 import Utils.{ExcelHandler, JsonHandler, Request}
 
