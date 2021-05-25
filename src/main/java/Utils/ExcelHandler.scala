@@ -1,17 +1,20 @@
+package Utils
+
+import UserClasses.Client
 import org.apache.commons.collections4.IteratorUtils
 import org.apache.poi.hssf.usermodel.{HSSFSheet, HSSFWorkbook}
-import org.apache.poi.ss.usermodel.Cell
-import org.apache.poi.ss.usermodel.DataFormatter
+import org.apache.poi.ss.usermodel.{Cell, DataFormatter}
+
 import java.io.{File, FileInputStream}
-import java.util.stream.{StreamSupport}
-import collection.JavaConverters._
+import java.util.stream.StreamSupport
 import scala.collection.mutable.ListBuffer
-object Reader {
-  def readFromExcel: List[Client] = {
+import scala.jdk.CollectionConverters.{CollectionHasAsScala, IteratorHasAsScala}
+
+object ExcelHandler {
+  def readClients(path:String): List[Client] = {
     var clientList = new ListBuffer[Client]()
-    var path="data/client.xls"
     StreamSupport.stream(getSheet(path).spliterator(), false).skip(1).map(row => {
-      var c = IteratorUtils.toList(row.cellIterator()).asScala.map(cell => getCellText(cell))
+      var c = row.cellIterator().asScala.toList.map(cell => getCellText(cell))
       Client(c(0),c(1), c(2), c(3).toInt, c(4), c(5), c(6),c(7), c(8).toInt, c(9), c(10).toInt)
     }).forEach(client => clientList += client)
     clientList.toList
