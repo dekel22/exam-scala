@@ -1,4 +1,4 @@
-package UserClasses
+package models
 
 import com.fasterxml.jackson.annotation.{JsonCreator, JsonProperty}
 

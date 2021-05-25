@@ -1,6 +1,6 @@
-package Utils
+package utils
 
-import UserClasses.Person
+import models.Person
 import com.fasterxml.jackson.core.`type`.TypeReference
 import com.fasterxml.jackson.databind.ObjectMapper
 

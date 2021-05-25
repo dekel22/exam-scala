@@ -1,3 +1,5 @@
+package models
+
 object Extensions {
 
   implicit class StringHelper(string: String) {

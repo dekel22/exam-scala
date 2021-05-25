@@ -1,6 +1,6 @@
-package Utils
+package utils
 
-import UserClasses.Client
+import models.Client
 import org.apache.commons.collections4.IteratorUtils
 import org.apache.poi.hssf.usermodel.{HSSFSheet, HSSFWorkbook}
 import org.apache.poi.ss.usermodel.{Cell, DataFormatter}

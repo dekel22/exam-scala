@@ -1,12 +1,14 @@
-import Extensions.StringHelper
-import UserClasses.{Client, User}
-import Utils.Request
+package models
+
+
+import models.Extensions.StringHelper
+import utils.Request
 
 import scala.collection.convert.ImplicitConversions.`collection AsScalaIterable`
 import scala.collection.mutable.ListBuffer
 import scala.jdk.CollectionConverters._
 
-class UsersTable {
+class UsersTableManage {
 
   var userList:List[User]= List()
 
@@ -22,7 +24,7 @@ class UsersTable {
   def filterIllegal(): Unit = {
     val filtered = new ListBuffer[User]()
     userList.filter(p => {
-      p.email.contains(".com") && p.email.contains("@")
+      p.email.isValidEmail
     })
       .filter(p => {
         p.age > 0 && p.phone.isValidPhoneNumber

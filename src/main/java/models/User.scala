@@ -1,4 +1,4 @@
-package UserClasses
+package models
 
 trait User {
   val age: Int

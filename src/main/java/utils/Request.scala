@@ -1,4 +1,4 @@
-package Utils
+package utils
 
 import com.fasterxml.jackson.annotation.{JsonCreator, JsonProperty}
 
